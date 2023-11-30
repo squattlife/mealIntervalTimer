@@ -9,6 +9,9 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet var timerResumeButton: UIButton!
     @IBOutlet var timePickerView: UIPickerView!
     @IBOutlet var timerView: UIView!
+    @IBOutlet var resetButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var pauseButton: UIButton!
     
     // pickerview 관련
     let mealCount = [2, 3, 4, 5, 6]
@@ -21,6 +24,8 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     // 타이머 관련
     var timer: Timer?
+    var paused: Bool = false
+    var pauseStartTime: Date? // 정지된 시간 기록
     var totalTimeInSeconds: Int = 0
     var mealCountLoop: Int = 2
     // 원그리기
@@ -29,18 +34,30 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIsetup()
+        
+        // 타이머 원 그리기
+        setupCircularLayer()
+    }
+    
+    func UIsetup() {
         mealPickerView.delegate = self
         mealPickerView.dataSource = self
         timePickerView.delegate = self
         timePickerView.dataSource = self
         
-        timePickerView.isHidden = true
+
+        mealPickerView.alpha = 1
+        timePickerView.alpha = 0
+        
         timerStartButton.isHidden = true
         timerView.alpha = 0
         timerResumeButton.isHidden = true
         
-        // Setup circular layer
-        setupCircularLayer()
+        mealPickerView.setValue(UIColor.white, forKey: "textColor")
+        timePickerView.setValue(UIColor.white, forKey: "textColor")
+        
+        
     }
     
     // 원 그리기 셋업
@@ -53,7 +70,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         circularLayer = CAShapeLayer()
         circularLayer.path = circularPath.cgPath
-        circularLayer.strokeColor = UIColor.orange.cgColor
+        circularLayer.strokeColor = UIColor.systemPink.cgColor
         circularLayer.lineWidth = 10
         circularLayer.fillColor = UIColor.clear.cgColor
         circularLayer.lineCap = .round
@@ -100,12 +117,12 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         confirmButton.isHidden = true
         timerStartButton.isHidden = false
         
-        mealPickerView.isHidden = true
+        UIView.animate(withDuration: 0.6) { [weak self] in
+                    self?.timePickerView.alpha = 1
+                }
+        mealPickerView.alpha = 0
         timePickerView.isHidden = false
-//        UIView.animate(withDuration: 0.6) { [weak self] in
-//                    self?.mealPickerView.alpha = 0
-//                    self?.timePickerView.alpha = 1
-//                }
+        
     }
     
     @IBAction func timerStartButtonClicked(_ sender: UIButton) {
@@ -135,7 +152,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // 타이머 레이블
         let timerLabel = UILabel()
         timerLabel.text = remainingTimeText(totalTimeInSeconds)
-        timerLabel.textColor = .black
+        timerLabel.textColor = .white
         timerLabel.textAlignment = .center
         timerLabel.font = UIFont.systemFont(ofSize: 36)
         timerLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -179,11 +196,15 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        
     }
     
     @objc func updateTimer() {
         totalTimeInSeconds -= 1
+        
+        // 일시 정지 버튼 여부확인
+        guard !paused else {
+            return
+        }
         
         // Update circular layer
         let progress = CGFloat(totalTimeInSeconds) / CGFloat((selectedHour * 3600) + (selectedMinute * 60))
@@ -218,8 +239,6 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         UIView.animate(withDuration: 0.6) { [weak self] in
                     self?.timerView.alpha = 1
                 }
-//        timerView.isHidden = false
-        
         
         if mealCountLoop <= selectedMeal {
             print(mealCountLoop)
@@ -241,26 +260,62 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
     }
     
+    
+    @IBAction func resetButtonClicked(_ sender: UIButton) {
+        timer?.invalidate()
+        timerReset()
+    }
+    
+    @IBAction func pauseButtonClicked(_ sender: UIButton) {
+        if pauseButton.titleLabel?.text == "정지" {
+            paused = true
+            pauseStartTime = Date()
+            pauseButton.setTitle("재개", for: .normal)
+            pauseButton.setTitleColor(UIColor.systemGreen, for: .normal)
+        } else {
+            // 재개를 하면 멈췄던 시간을 받아 타이머 재가동
+            if let pauseStartTime = pauseStartTime {
+                let pausedTime = Int(Date().timeIntervalSince(pauseStartTime))
+                totalTimeInSeconds += pausedTime
+            }
+            paused = false
+            pauseButton.setTitle("정지", for: .normal)
+            pauseButton.setTitleColor(UIColor.systemOrange, for: .normal)
+            pauseStartTime = nil  // 멈춰둔 시간 초기화
+        }
+    }
+
+    
     func timerReset() {
         print("타이머 리셋중")
         DispatchQueue.main.async {
             self.timer?.invalidate()
             self.timerView.subviews.forEach { $0.removeFromSuperview() }
             self.timerResumeButton.isHidden = true
-            self.timerResumeButton.alpha = 1  // Reset alpha if modified
+            self.timerResumeButton.alpha = 1
             self.timerView.alpha = 0
-            self.mealPickerView.isHidden = false
+            
+            self.mealPickerView.alpha = 1
+            self.timePickerView.alpha = 0
+            
             self.confirmButton.isHidden = false
+            self.timerStartButton.isHidden = true
+            
             self.mainLabel.text = "끼니 수 선택"
             self.mainLabel.isHidden = false
             self.mainLabel.alpha = 1
-            self.timePickerView.isHidden = true
-            self.timerStartButton.isHidden = true
+            
             self.mealCountLoop = 2
             self.totalTimeInSeconds = 0
             self.selectedMeal = 0
             self.selectedHour = 0
             self.selectedMinute = 0
+            
+            // 정지하고 초기화 시켰을 경우 - pauseButton 초기화
+            self.paused = false
+            self.pauseButton.setTitle("정지", for: .normal)
+            self.pauseButton.setTitleColor(UIColor.systemOrange, for: .normal)
+            self.pauseStartTime = nil
         }
     }
 }
