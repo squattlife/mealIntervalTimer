@@ -23,7 +23,8 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     var timer: Timer?
     var totalTimeInSeconds: Int = 0
     var mealCountLoop: Int = 2
-
+    // 원그리기
+    var circularLayer: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,28 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         timerStartButton.isHidden = true
         timerView.alpha = 0
         timerResumeButton.isHidden = true
-   
+        
+        // Setup circular layer
+        setupCircularLayer()
+    }
+    
+    // 원 그리기 셋업
+    func setupCircularLayer() {
+        let circularPath = UIBezierPath(arcCenter: CGPoint(x: timerView.bounds.width / 2, y: timerView.bounds.height / 2),
+                                        radius: (timerView.bounds.width - 20) / 2,
+                                        startAngle: -CGFloat.pi / 2,
+                                        endAngle: 2 * CGFloat.pi - CGFloat.pi / 2,
+                                        clockwise: true)
+        
+        circularLayer = CAShapeLayer()
+        circularLayer.path = circularPath.cgPath
+        circularLayer.strokeColor = UIColor.orange.cgColor
+        circularLayer.lineWidth = 10
+        circularLayer.fillColor = UIColor.clear.cgColor
+        circularLayer.lineCap = .round
+        circularLayer.strokeEnd = 0
+        
+        timerView.layer.addSublayer(circularLayer)
     }
     
     // PickerView DataSource
@@ -80,6 +102,10 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         mealPickerView.isHidden = true
         timePickerView.isHidden = false
+//        UIView.animate(withDuration: 0.6) { [weak self] in
+//                    self?.mealPickerView.alpha = 0
+//                    self?.timePickerView.alpha = 1
+//                }
     }
     
     @IBAction func timerStartButtonClicked(_ sender: UIButton) {
@@ -158,6 +184,10 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @objc func updateTimer() {
         totalTimeInSeconds -= 1
+        
+        // Update circular layer
+        let progress = CGFloat(totalTimeInSeconds) / CGFloat((selectedHour * 3600) + (selectedMinute * 60))
+        circularLayer.strokeEnd = progress
         
         // 타이머 0초 도달 - 종료 및 남은 끼니수 여부 확인
         if totalTimeInSeconds <= -1 {
