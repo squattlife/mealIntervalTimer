@@ -216,6 +216,8 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             removeLabelsFromTimerView()
             timerResumeButton.setTitle("\(mealCountLoop)번째 식사 완료", for: .normal)
             timerResumeButton.isHidden = false
+            
+            showAlert()
         } else {
             if let timerLabel = timerView.subviews.first as? UILabel {
                 timerLabel.text = remainingTimeText(totalTimeInSeconds)
@@ -232,6 +234,21 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
     }
     
+    // 알람 관련 메서드
+    func showAlert() {
+        if mealCountLoop <= selectedMeal {
+            let alert = UIAlertController(title: "타이머 끝", message: "\(mealCountLoop)번째 식사를 진행하세요", preferredStyle: UIAlertController.Style.alert)
+            let okForAlert = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(okForAlert)
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "오늘의 모든 식사를 끝냈습니다", message: nil, preferredStyle: UIAlertController.Style.alert)
+            let okForAlert = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(okForAlert)
+            present(alert, animated: true)
+        }
+    }
+    
     @IBAction func timerResumeButtonClicked(_ sender: UIButton) {
         mealCountLoop += 1
         timerResumeButton.isHidden = true
@@ -244,6 +261,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             print(mealCountLoop)
             timerShow()
         } else {
+            showAlert()
             timer?.invalidate()
             timerReset()
             
