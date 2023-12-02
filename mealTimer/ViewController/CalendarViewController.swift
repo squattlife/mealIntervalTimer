@@ -9,24 +9,17 @@ import UIKit
 import CoreData
 
 class CalendarViewController: UIViewController {
-    
-    var cycleTrue: Bool = false
  
     @IBOutlet var datePicker: UIDatePicker!
-    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var checkLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func updateCycleTrue(value: Bool) {
-        cycleTrue = value
+        
     }
     
     @IBAction func datePickerSelected(_ sender: UIDatePicker) {
-        updateDateLabel(sender.date)
-        
+
         let selectedDate = sender.date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -40,26 +33,19 @@ class CalendarViewController: UIViewController {
             let result = try context.fetch(request)
             if let data = result.first as? NSManagedObject {
                 if data.value(forKey: "value") is Bool {
-                    checkLabel!.text = "해당 요일의 식단을 완료했습니다"
+                    checkLabel.text = "식단 완료!"
+                    checkLabel.textColor = UIColor.systemGreen
                 } else {
-                    print("해당 날짜의 데이터가 없습니다.")
+                    checkLabel.text = "식단 미완료 상태"
+                    checkLabel.textColor = UIColor.systemRed
                 }
             } else {
-                print("해당 날짜의 데이터가 없습니다.")
+                checkLabel!.text = "식단 미완료 상태"
+                checkLabel.textColor = UIColor.systemRed
             }
         } catch {
             print("Failed fetching")
         }
-    }
-
-
-
-    
-    func updateDateLabel(_ date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: date)
-        dateLabel.text = dateString
     }
     
 }

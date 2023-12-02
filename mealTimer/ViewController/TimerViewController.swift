@@ -11,7 +11,6 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet var timePickerView: UIPickerView!
     @IBOutlet var timerView: UIView!
     @IBOutlet var resetButton: UIButton!
-    @IBOutlet var cancelButton: UIButton!
     @IBOutlet var pauseButton: UIButton!
     
     // pickerview 관련
@@ -56,9 +55,11 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         timerView.alpha = 0
         timerResumeButton.isHidden = true
         
+        resetButton.alpha = 0
+        pauseButton.alpha = 0
+        
         mealPickerView.setValue(UIColor.white, forKey: "textColor")
         timePickerView.setValue(UIColor.white, forKey: "textColor")
-        
         
     }
     
@@ -131,6 +132,8 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         timerStartButton.isHidden = true
         UIView.animate(withDuration: 0.6) { [weak self] in
                     self?.timerView.alpha = 1
+                    self?.resetButton.alpha = 1
+                    self?.pauseButton.alpha = 1
                 }
         timePickerView.isHidden = true
         mainLabel.isHidden = true
@@ -156,7 +159,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         timerLabel.text = remainingTimeText(totalTimeInSeconds)
         timerLabel.textColor = .white
         timerLabel.textAlignment = .center
-        timerLabel.font = UIFont.systemFont(ofSize: 36)
+        timerLabel.font = UIFont.systemFont(ofSize: 38)
         timerLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // 추가 레이블 (식사 현황)
@@ -164,7 +167,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         additionalLabel.text = "\(mealCountLoop-1)번째 식사 완료 상태"
         additionalLabel.textColor = .gray
         additionalLabel.textAlignment = .center
-        additionalLabel.font = UIFont.systemFont(ofSize: 16)
+        additionalLabel.font = UIFont.systemFont(ofSize: 18)
         additionalLabel.translatesAutoresizingMaskIntoConstraints = false
         
         timerView.addSubview(timerLabel)
