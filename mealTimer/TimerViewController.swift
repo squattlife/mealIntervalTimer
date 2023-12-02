@@ -1,7 +1,8 @@
 import UIKit
+import CoreData
 
 class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+ 
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var mealPickerView: UIPickerView!
     @IBOutlet var confirmButton: UIButton!
@@ -28,6 +29,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     var pauseStartTime: Date? // 정지된 시간 기록
     var totalTimeInSeconds: Int = 0
     var mealCountLoop: Int = 2
+    
     // 원그리기
     var circularLayer: CAShapeLayer!
     
@@ -241,7 +243,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             let okForAlert = UIAlertAction(title: "확인", style: .default)
             alert.addAction(okForAlert)
             present(alert, animated: true)
-        } else {
+        } else {                         
             let alert = UIAlertController(title: "오늘의 모든 식사를 끝냈습니다", message: nil, preferredStyle: UIAlertController.Style.alert)
             let okForAlert = UIAlertAction(title: "확인", style: .default)
             alert.addAction(okForAlert)
@@ -262,23 +264,42 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             timerShow()
         } else {
             showAlert()
+            saveData()
+            
             timer?.invalidate()
             timerReset()
             
-            // 하루 식단 사이클 완료시 date에 표시
-            dateCheck()
             return
         }
     }
     
-    func dateCheck(){
+    func saveData() {
+        // 현재 날짜
+        let currentDate = Date()
+            
+        // 날짜를 문자열로 변환
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let current_date = dateFormatter.string(from: Date())
+        let currentDateString = dateFormatter.string(from: currentDate)
+            
+        // Core Data 스택에서 관리 객체 컨텍스트를 가져오기
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        // 새로운 Data 객체를 생성
+        let entity = NSEntityDescription.entity(forEntityName: "DataControl", in: context)
+        let newData = NSManagedObject(entity: entity!, insertInto: context)
+        newData.setValue(currentDateString, forKey: "dateString")
+        newData.setValue(true, forKey: "value")
+        
+        // 변경 사항을 저장합니다.
+        do {
+            try context.save()
+        } catch {
+            print("Failed saving")
+        }
     }
-    
-    
+
+
     @IBAction func resetButtonClicked(_ sender: UIButton) {
         timer?.invalidate()
         timerReset()

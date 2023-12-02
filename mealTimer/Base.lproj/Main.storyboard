@@ -22,7 +22,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="oAM-Fn-N3G"/>
-                        <segue destination="Q0M-La-6r4" kind="relationship" relationship="viewControllers" id="MRN-00-ZMO"/>
+                        <segue destination="Q0M-La-6r4" kind="relationship" relationship="viewControllers" id="28n-j4-tJR"/>
                         <segue destination="9rG-ml-Nl2" kind="relationship" relationship="viewControllers" id="1CN-IX-4Gz"/>
                     </connections>
                 </tabBarController>
@@ -71,6 +71,19 @@
                                     <action selector="timerStartButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWv-qe-vIP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-EG-JFw">
+                                <rect key="frame" x="64" y="402" width="265" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="확인">
+                                    <color key="titleColor" red="0.97812384366989136" green="0.97900182008743286" blue="0.93832987546920776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ja-WX-NAc"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oof-uu-q0y">
                                 <rect key="frame" x="62" y="311" width="265" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -84,19 +97,6 @@
                                     <action selector="confirmButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ou-fP-QWm"/>
                                     <action selector="timerResumeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qhg-vl-qVK"/>
                                     <action selector="timerStartButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfM-8E-MhX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-EG-JFw">
-                                <rect key="frame" x="64" y="402" width="265" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="확인">
-                                    <color key="titleColor" red="0.97812384366989136" green="0.97900182008743286" blue="0.93832987546920776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="confirmButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ja-WX-NAc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gD-jg-ZaX">
@@ -126,7 +126,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="lkf-1s-Fvb"/>
                         <color key="backgroundColor" red="0.14305207322330404" green="0.20658775411752425" blue="0.3125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="타이머" image="timer" catalog="system" id="fdG-rG-WRa"/>
@@ -149,23 +149,45 @@
         <!--캘린더-->
         <scene sceneID="2jB-Kc-57X">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" title="캘린더" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q0M-La-6r4" customClass="CalendarViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q0M-La-6r4" customClass="CalendarViewController" customModule="mealTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZL2-Bp-RKW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="PqO-UQ-PXU">
-                                <rect key="frame" x="0.0" y="103" width="393" height="524"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2023-00-00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-Uj-BPh">
+                                <rect key="frame" x="16" y="534" width="348" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" id="PqO-UQ-PXU">
+                                <rect key="frame" x="31" y="138" width="331" height="388"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="1" height="1"/>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="datePickerSelected:" destination="Q0M-La-6r4" eventType="valueChanged" id="wJw-dx-bDE"/>
+                                </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-ex-ENl" userLabel="checkLabel">
+                                <rect key="frame" x="14" y="627" width="348" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="xmI-sq-SkT"/>
+                        <viewLayoutGuide key="safeArea" id="Uzk-Ee-NXO"/>
                         <color key="backgroundColor" red="0.14305207319999999" green="0.20658775409999999" blue="0.3125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar" catalog="system" id="1YX-u5-dP2"/>
+                    <connections>
+                        <outlet property="checkLabel" destination="Jhv-ex-ENl" id="xfy-ja-Lzj"/>
+                        <outlet property="dateLabel" destination="ECb-Uj-BPh" id="Jda-qr-Vyf"/>
+                        <outlet property="datePicker" destination="PqO-UQ-PXU" id="z8F-a0-zmU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG7-uD-A7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,7 +200,7 @@
                     <view key="view" contentMode="scaleToFill" id="XPl-r5-2HM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Cdw-gU-b97"/>
+                        <viewLayoutGuide key="safeArea" id="SBD-sH-6or"/>
                         <color key="backgroundColor" red="0.14305207319999999" green="0.20658775409999999" blue="0.3125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="식단" image="doc.text" catalog="system" id="ASi-hY-IhT"/>
