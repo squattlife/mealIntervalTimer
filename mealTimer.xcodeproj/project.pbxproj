@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1B28DC2B1F8BD1004181BC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = AE1B28DB2B1F8BD1004181BC /* background.png */; };
 		AE25E00F2B0D7EF100681251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25E00E2B0D7EF100681251 /* AppDelegate.swift */; };
 		AE25E0112B0D7EF100681251 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25E0102B0D7EF100681251 /* SceneDelegate.swift */; };
 		AE25E0132B0D7EF100681251 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25E0122B0D7EF100681251 /* TimerViewController.swift */; };
 		AE25E0182B0D7EF200681251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE25E0172B0D7EF200681251 /* Assets.xcassets */; };
 		AE25E01B2B0D7EF200681251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25E0192B0D7EF200681251 /* LaunchScreen.storyboard */; };
-		AE3AE1042B1BB3F600230893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3AE1032B1BB3F500230893 /* Main.storyboard */; };
-		AE4876812B11FFAB00481595 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4876802B11FFAB00481595 /* MealViewController.swift */; };
+		AE39710B2B1EE21700EB5C75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE39710A2B1EE21700EB5C75 /* Main.storyboard */; };
+		AE39710D2B1F5E7300EB5C75 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE39710C2B1F5E7300EB5C75 /* InfoViewController.swift */; };
 		AE56CA902B1BA29B001623E0 /* CycleData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE56CA8E2B1BA29B001623E0 /* CycleData.xcdatamodeld */; };
 		AE56CA922B1BA48D001623E0 /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE56CA912B1BA48D001623E0 /* DataControl.swift */; };
 		AEA9B6DE2B1B7AB4008B0727 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9B6DD2B1B7AB4008B0727 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1B28DB2B1F8BD1004181BC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		AE25E00B2B0D7EF100681251 /* mealTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mealTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE25E00E2B0D7EF100681251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE25E0102B0D7EF100681251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,8 +29,8 @@
 		AE25E0172B0D7EF200681251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE25E01A2B0D7EF200681251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE25E01C2B0D7EF200681251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE3AE1032B1BB3F500230893 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		AE4876802B11FFAB00481595 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
+		AE39710A2B1EE21700EB5C75 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AE39710C2B1F5E7300EB5C75 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		AE56CA8F2B1BA29B001623E0 /* CycleData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CycleData.xcdatamodel; sourceTree = "<group>"; };
 		AE56CA912B1BA48D001623E0 /* DataControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
 		AEA9B6DD2B1B7AB4008B0727 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +73,8 @@
 				AE25E0172B0D7EF200681251 /* Assets.xcassets */,
 				AE25E0192B0D7EF200681251 /* LaunchScreen.storyboard */,
 				AE25E01C2B0D7EF200681251 /* Info.plist */,
-				AE3AE1032B1BB3F500230893 /* Main.storyboard */,
+				AE39710A2B1EE21700EB5C75 /* Main.storyboard */,
+				AE1B28DB2B1F8BD1004181BC /* background.png */,
 			);
 			path = mealTimer;
 			sourceTree = "<group>";
@@ -81,7 +84,7 @@
 			children = (
 				AE25E0122B0D7EF100681251 /* TimerViewController.swift */,
 				AEA9B6DD2B1B7AB4008B0727 /* CalendarViewController.swift */,
-				AE4876802B11FFAB00481595 /* MealViewController.swift */,
+				AE39710C2B1F5E7300EB5C75 /* InfoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -154,8 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE25E01B2B0D7EF200681251 /* LaunchScreen.storyboard in Resources */,
+				AE39710B2B1EE21700EB5C75 /* Main.storyboard in Resources */,
 				AE25E0182B0D7EF200681251 /* Assets.xcassets in Resources */,
-				AE3AE1042B1BB3F600230893 /* Main.storyboard in Resources */,
+				AE1B28DC2B1F8BD1004181BC /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +172,8 @@
 			files = (
 				AE56CA922B1BA48D001623E0 /* DataControl.swift in Sources */,
 				AEA9B6DE2B1B7AB4008B0727 /* CalendarViewController.swift in Sources */,
-				AE4876812B11FFAB00481595 /* MealViewController.swift in Sources */,
 				AE56CA902B1BA29B001623E0 /* CycleData.xcdatamodeld in Sources */,
+				AE39710D2B1F5E7300EB5C75 /* InfoViewController.swift in Sources */,
 				AE25E0132B0D7EF100681251 /* TimerViewController.swift in Sources */,
 				AE25E00F2B0D7EF100681251 /* AppDelegate.swift in Sources */,
 				AE25E0112B0D7EF100681251 /* SceneDelegate.swift in Sources */,

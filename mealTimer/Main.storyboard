@@ -38,8 +38,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="chE-xR-JSq">
+                                <rect key="frame" x="0.0" y="-92" width="477" height="944"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQL-r5-UL3">
-                                <rect key="frame" x="-3" y="189" width="392" height="162"/>
+                                <rect key="frame" x="38" y="189" width="322" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="TimerViewController" text="끼니 수 선택" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8J-bs-kK1" customClass="TimerViewController">
@@ -54,10 +58,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-6G-2tk">
-                                <rect key="frame" x="-3" y="189" width="392" height="162"/>
+                                <rect key="frame" x="38" y="189" width="322" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qit-YG-rTZ">
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qit-YG-rTZ">
                                 <rect key="frame" x="64" y="401" width="265" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -71,7 +75,7 @@
                                     <action selector="timerStartButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWv-qe-vIP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-EG-JFw">
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-EG-JFw">
                                 <rect key="frame" x="64" y="402" width="265" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -84,7 +88,7 @@
                                     <action selector="confirmButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ja-WX-NAc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oof-uu-q0y">
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oof-uu-q0y">
                                 <rect key="frame" x="62" y="311" width="265" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -127,7 +131,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lkf-1s-Fvb"/>
-                        <color key="backgroundColor" red="0.14305207322330404" green="0.20658775411752425" blue="0.3125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.15191173550000001" green="0.18106049299999999" blue="0.2188306451" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="타이머" image="timer" catalog="system" id="fdG-rG-WRa"/>
                     <connections>
@@ -154,8 +158,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-VH-5df">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kto-tB-FBL">
+                                <rect key="frame" x="16" y="143" width="361" height="360"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xbr-gq-xhu">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="360"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <datePicker alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" id="PqO-UQ-PXU">
-                                <rect key="frame" x="32" y="169" width="328" height="334"/>
+                                <rect key="frame" x="31" y="169" width="328" height="334"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="1" height="1"/>
@@ -164,11 +181,27 @@
                                     <action selector="datePickerSelected:" destination="Q0M-La-6r4" eventType="valueChanged" id="wJw-dx-bDE"/>
                                 </connections>
                             </datePicker>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="psX-OP-lUC">
+                                <rect key="frame" x="19" y="583" width="354" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p1z-FD-dLY">
+                                    <rect key="frame" x="0.0" y="0.0" width="354" height="94"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-ex-ENl" userLabel="checkLabel">
-                                <rect key="frame" x="22" y="576" width="348" height="63"/>
+                                <rect key="frame" x="19" y="598" width="348" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwi-5C-T0z">
+                                <rect key="frame" x="41" y="598" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -177,7 +210,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="캘린더" image="calendar" catalog="system" id="1YX-u5-dP2"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="S9R-VH-5df" id="SMl-du-bsG"/>
+                        <outlet property="blurView" destination="Kto-tB-FBL" id="E9k-MS-QcY"/>
+                        <outlet property="blurView2" destination="psX-OP-lUC" id="BO4-j8-Hth"/>
                         <outlet property="checkLabel" destination="Jhv-ex-ENl" id="xfy-ja-Lzj"/>
+                        <outlet property="dateLabel" destination="gwi-5C-T0z" id="CLh-no-oeU"/>
                         <outlet property="datePicker" destination="PqO-UQ-PXU" id="z8F-a0-zmU"/>
                     </connections>
                 </viewController>
@@ -188,21 +225,31 @@
         <!--식단-->
         <scene sceneID="pm3-hP-6Wc">
             <objects>
-                <viewController storyboardIdentifier="MealViewController" id="9rG-ml-Nl2" customClass="MealViewController" customModule="mealTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XPl-r5-2HM">
+                <viewController id="9rG-ml-Nl2" customClass="InfoViewController" customModule="mealTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7FN-Sb-5g5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="SBD-sH-6or"/>
-                        <color key="backgroundColor" red="0.14305207319999999" green="0.20658775409999999" blue="0.3125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bj7-EI-H94">
+                                <rect key="frame" x="-99" y="0.0" width="497" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ddu-TT-7dl"/>
+                        <color key="backgroundColor" red="0.14509806040000001" green="0.20392158630000001" blue="0.31372550129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="식단" image="doc.text" catalog="system" id="ASi-hY-IhT"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="Bj7-EI-H94" id="hnS-8d-0d2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOo-Rj-D2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="358"/>
+            <point key="canvasLocation" x="-724.4274809160305" y="357.74647887323948"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background.png" width="864" height="1068"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="timer" catalog="system" width="128" height="123"/>

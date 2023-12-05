@@ -42,6 +42,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func UIsetup() {
+        
         mealPickerView.delegate = self
         mealPickerView.dataSource = self
         timePickerView.delegate = self
@@ -60,6 +61,10 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         mealPickerView.setValue(UIColor.white, forKey: "textColor")
         timePickerView.setValue(UIColor.white, forKey: "textColor")
+        
+        confirmButton.layer.cornerRadius = 15
+        timerStartButton.layer.cornerRadius = 15
+        timerResumeButton.layer.cornerRadius = 15
         
     }
     
@@ -361,3 +366,5 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
     }
 }
+
+

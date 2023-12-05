@@ -10,12 +10,18 @@ import CoreData
 
 class CalendarViewController: UIViewController {
  
+    @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var checkLabel: UILabel!
+    @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet var blurView2: UIVisualEffectView!
+    @IBOutlet var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        backgroundImage.image = UIImage(named: "background.png")
+        blurView.layer.cornerRadius = 30
+        blurView2.layer.cornerRadius = 30
     }
     
     @IBAction func datePickerSelected(_ sender: UIDatePicker) {
@@ -35,13 +41,19 @@ class CalendarViewController: UIViewController {
                 if data.value(forKey: "value") is Bool {
                     checkLabel.text = "식단 완료!"
                     checkLabel.textColor = UIColor.systemGreen
+                    dateLabel.text = dateString
+                    blurView2.backgroundColor = UIColor.systemGreen
                 } else {
-                    checkLabel.text = "식단 미완료 상태"
+                    checkLabel.text = "식단 미완료!"
                     checkLabel.textColor = UIColor.systemRed
+                    dateLabel.text = dateString
+                    blurView2.backgroundColor = UIColor.systemRed
                 }
             } else {
-                checkLabel!.text = "식단 미완료 상태"
+                checkLabel!.text = "식단 미완료!"
                 checkLabel.textColor = UIColor.systemRed
+                blurView2.backgroundColor = UIColor.systemRed
+                dateLabel.text = dateString
             }
         } catch {
             print("Failed fetching")
