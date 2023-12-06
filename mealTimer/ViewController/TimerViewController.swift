@@ -348,6 +348,9 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             self.confirmButton.isHidden = false
             self.timerStartButton.isHidden = true
             
+            self.resetButton.alpha = 0
+            self.pauseButton.alpha = 0
+            
             self.mainLabel.text = "끼니 수 선택"
             self.mainLabel.isHidden = false
             self.mainLabel.alpha = 1
