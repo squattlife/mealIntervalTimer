@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -43,11 +44,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQL-r5-UL3">
-                                <rect key="frame" x="38" y="189" width="322" height="162"/>
+                                <rect key="frame" x="35" y="189" width="324" height="187"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="TimerViewController" text="끼니 수 선택" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8J-bs-kK1" customClass="TimerViewController">
-                                <rect key="frame" x="0.0" y="113" width="392" height="39"/>
+                                <rect key="frame" x="0.0" y="113" width="393" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="28"/>
                                 <color key="textColor" red="0.98838049169999997" green="0.9769765735" blue="0.94583374259999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -58,25 +59,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-6G-2tk">
-                                <rect key="frame" x="38" y="189" width="322" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qit-YG-rTZ">
-                                <rect key="frame" x="64" y="401" width="265" height="49"/>
+                                <rect key="frame" x="34" y="189" width="325" height="187"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="타이머 시작">
-                                    <color key="titleColor" red="0.97812384370000005" green="0.97900182010000003" blue="0.93832987550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="confirmButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieI-rT-uGr"/>
-                                    <action selector="timerStartButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWv-qe-vIP"/>
-                                </connections>
-                            </button>
+                            </pickerView>
                             <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-EG-JFw">
-                                <rect key="frame" x="64" y="402" width="265" height="49"/>
+                                <rect key="frame" x="81" y="401" width="230" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
@@ -89,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oof-uu-q0y">
-                                <rect key="frame" x="62" y="311" width="265" height="49"/>
+                                <rect key="frame" x="81" y="311" width="230" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
@@ -127,6 +114,21 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="pauseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="did-2L-SDt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qit-YG-rTZ">
+                                <rect key="frame" x="81" y="413" width="230" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <rect key="contentStretch" x="0.0" y="0.20000000000000001" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="타이머 시작">
+                                    <color key="titleColor" red="0.97812384370000005" green="0.97900182010000003" blue="0.93832987550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ieI-rT-uGr"/>
+                                    <action selector="timerStartButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWv-qe-vIP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,7 +174,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <datePicker alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" id="PqO-UQ-PXU">
-                                <rect key="frame" x="31" y="169" width="328" height="334"/>
+                                <rect key="frame" x="30" y="169" width="328" height="334"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.0" width="1" height="1"/>
@@ -230,10 +232,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bj7-EI-H94">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bj7-EI-H94">
                                 <rect key="frame" x="-99" y="0.0" width="497" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yij-IM-2fV">
+                                <rect key="frame" x="0.0" y="190" width="393" height="547"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T37-PI-zhK">
+                                    <size key="itemSize" width="175" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InfoCell" id="fM6-JJ-Sf3" customClass="InfoCell" customModule="mealTimer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tdo-DG-uUZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="163" height="219"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X7C-RS-1S9" userLabel="sectionImage">
+                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="163"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="X7C-RS-1S9" secondAttribute="height" multiplier="1:1" id="9A5-ct-PEh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoreML" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whu-BK-utM" userLabel="sectionLabel">
+                                                    <rect key="frame" x="10" y="171" width="143" height="19.333333333333343"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Whu-BK-utM" firstAttribute="centerX" secondItem="tdo-DG-uUZ" secondAttribute="centerX" id="7hU-rn-16k"/>
+                                                <constraint firstAttribute="trailing" secondItem="X7C-RS-1S9" secondAttribute="trailing" id="Bpu-1z-bbv"/>
+                                                <constraint firstItem="X7C-RS-1S9" firstAttribute="leading" secondItem="tdo-DG-uUZ" secondAttribute="leading" id="IkD-W6-EUe"/>
+                                                <constraint firstItem="Whu-BK-utM" firstAttribute="leading" secondItem="tdo-DG-uUZ" secondAttribute="leading" constant="10" id="WtR-NW-ND4"/>
+                                                <constraint firstItem="Whu-BK-utM" firstAttribute="top" secondItem="X7C-RS-1S9" secondAttribute="bottom" constant="8" symbolic="YES" id="ZxR-tx-cKr"/>
+                                                <constraint firstItem="X7C-RS-1S9" firstAttribute="top" secondItem="tdo-DG-uUZ" secondAttribute="top" id="wnS-Z2-13N"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="163" height="219"/>
+                                        <connections>
+                                            <outlet property="sectionImage" destination="X7C-RS-1S9" id="obI-3Y-44n"/>
+                                            <outlet property="sectionLabel" destination="Whu-BK-utM" id="OIO-TM-wc0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="원하는 정보 선택" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-c0-Nyq">
+                                <rect key="frame" x="45" y="90" width="302" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ddu-TT-7dl"/>
                         <color key="backgroundColor" red="0.14509806040000001" green="0.20392158630000001" blue="0.31372550129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -241,6 +298,7 @@
                     <tabBarItem key="tabBarItem" title="식단" image="doc.text" catalog="system" id="ASi-hY-IhT"/>
                     <connections>
                         <outlet property="backgroundImage" destination="Bj7-EI-H94" id="hnS-8d-0d2"/>
+                        <outlet property="collectionView" destination="yij-IM-2fV" id="4Y4-c9-Si7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOo-Rj-D2G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
