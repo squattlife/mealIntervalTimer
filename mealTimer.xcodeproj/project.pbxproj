@@ -22,6 +22,7 @@
 		AEA9B6DE2B1B7AB4008B0727 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA9B6DD2B1B7AB4008B0727 /* CalendarViewController.swift */; };
 		AEBBB91E2B24E70000BBB0CC /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEBBB91D2B24E70000BBB0CC /* Detail.storyboard */; };
 		AEBBB9222B24EC0800BBB0CC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBBB9212B24EC0800BBB0CC /* DetailViewController.swift */; };
+		AECCDB5C2B24FA9000757922 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECCDB5B2B24FA8F00757922 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		AEA9B6DD2B1B7AB4008B0727 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		AEBBB91D2B24E70000BBB0CC /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		AEBBB9212B24EC0800BBB0CC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AECCDB5B2B24FA8F00757922 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				AEBBB9212B24EC0800BBB0CC /* DetailViewController.swift */,
 				AEBBB91D2B24E70000BBB0CC /* Detail.storyboard */,
+				AECCDB5B2B24FA8F00757922 /* WebViewController.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE56CA922B1BA48D001623E0 /* DataControl.swift in Sources */,
+				AECCDB5C2B24FA9000757922 /* WebViewController.swift in Sources */,
 				AEA9B6DE2B1B7AB4008B0727 /* CalendarViewController.swift in Sources */,
 				AE1B28E02B21A8C3004181BC /* InfoCell.swift in Sources */,
 				AE56CA902B1BA29B001623E0 /* CycleData.xcdatamodeld in Sources */,
