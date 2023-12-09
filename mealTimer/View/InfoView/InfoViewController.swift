@@ -71,6 +71,12 @@ extension InfoViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = list[indexPath.item]
         print(">>> selected: \(section.name)")
+        
+        // DetailView 띄우기
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.detailCell = section
+        present(vc, animated: true)
     }
 }
 
