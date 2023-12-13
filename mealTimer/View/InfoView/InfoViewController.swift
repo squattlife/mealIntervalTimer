@@ -54,7 +54,7 @@ extension InfoViewController: UICollectionViewDelegateFlowLayout{
         // inset 설정으로 인한 padding 설정
         let padding: CGFloat = 16
         
-        let width = (collectionView.bounds.width - interItemSpacing * 3 - padding * 2) / 1.7
+        let width = (collectionView.bounds.width - interItemSpacing * 3 - padding * 2) / 1.85
         let height = width * 1.3
         
         return CGSize(width: width, height: height)

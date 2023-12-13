@@ -30,17 +30,23 @@ class DetailViewController: UIViewController {
     
     // WebView
     func openWebView(withURL url: String) {
-        let webViewController = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        webViewController.urlString = url
-        let navigationController = UINavigationController(rootViewController: webViewController)
-        present(navigationController, animated: true, completion: nil)
+        let vc = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.urlString = url
+        let webvc = UINavigationController(rootViewController: vc)
+        present(webvc, animated: true, completion: nil)
+    }
+    
+    func openFoodView() {
+        
     }
     
     @IBAction func connectButtonClicked(_ sender: UIButton) {
         if(titleLabel.text == "칼로리 계산"){
             openWebView(withURL: "https://tdeecalculator.net/")
         } else {
-            
+            let vc = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "FoodViewController") as! FoodViewController
+            let foodvc = UINavigationController(rootViewController: vc)
+            present(foodvc, animated: true, completion: nil)
         }
     }
     
